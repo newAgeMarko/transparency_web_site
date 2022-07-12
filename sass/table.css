@@ -1,0 +1,75 @@
+.DesnaTabela th, .DesnaTabela tbody td {
+  padding: 6px 9px;
+  background-color: #c5c3c48c;
+  color: #525354;
+  border: 1px solid #7d7d7d00;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+  font-size: 13px;
+}
+
+#dvTable {
+  position: relative;
+  overflow-x: scroll;
+}
+
+.DesnaTabela {
+  border-collapse: separate;
+  overflow: hidden;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.26);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.26);
+}
+
+.DesnaTabela tr:first-child {
+  background-color: #c5c3c48c;
+}
+
+.DesnaTabela th {
+  border: 1px solid #7d7d7d00;
+  text-align: left;
+  color: #fff;
+  text-transform: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.DesnaTabela tbody td {
+  border: 1px solid #7d7d7d00;
+  position: relative;
+}
+
+.DesnaTabela tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: #c5c3c48c;
+  z-index: -1;
+}
+
+.DesnaTabela tbody tr:hover {
+  background-color: #c5c3c48c;
+}
+
+.DesnaTabela td:hover {
+  border: 1px solid #D76F72;
+  -webkit-transition: .1s ease;
+  transition: .1s ease;
+}
+
+.DesnaTabela thead th {
+  background-color: #525354;
+}
+
+.DesnaTabela td:nth-child(1), .DesnaTabela td:nth-child(2) {
+  color: white;
+  border: 1px solid transparent;
+  background-color: #c5c3c48c;
+}
+
+.DesnaTabela td:nth-child(1):hover:before, .DesnaTabela td:nth-child(2):hover:before {
+  content: none;
+}
+/*# sourceMappingURL=table.css.map */

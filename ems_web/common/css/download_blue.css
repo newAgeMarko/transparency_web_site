@@ -1,0 +1,145 @@
+.download_form {
+	width: 326px;
+	position: relative;
+}
+	
+.switch {
+	position: relative;
+	margin-bottom: 20px;
+	text-align: left;
+	color: #ccc;
+}	
+	
+.switch input {
+	position: absolute;
+	margin-left: -9999px;
+	visibility: hidden;
+}	
+	
+.switch input + label {
+    cursor: pointer;
+}
+
+.switch input + label:before,
+.switch input + label:after {
+	display: block;
+	position: absolute;
+	content: "";
+}
+
+.switch input + label:before {
+	top: 2px;
+	bottom: 2px;
+	right: 0;
+	padding: 2px;
+	width: 22px;
+	background-color: #fff;
+	border: 2px solid #ddd;
+	border-radius: 16px;
+	transition: background 0.4s;
+}
+.switch input + label:after {
+	top: 4px;
+	right: 16px;
+	bottom: 4px;
+	width: 12px;
+	background-color: #dddddd;
+	border-radius: 12px;
+	transition: margin 0.4s, background 0.4s;
+}
+
+.switch input:checked + label {
+	color: #016DB6;
+}
+
+.switch input:checked + label:before {
+	border: 2px solid #016DB6;
+}
+
+.switch input:checked + label:after {
+	right: 2px;
+	background-color: #016DB6;
+}
+
+.period {
+	margin-top: -10px;
+	display: none;
+}
+
+.period input {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	padding: 4px;
+	width: 180px;
+    color: transparent;
+    text-shadow: 0 0 0 black;
+	font-size: inherit;
+    font-family: Arial;
+    letter-spacing: 0.2px;
+}
+
+.period input:focus {
+	outline: none;
+	border: 2px solid rgba(1, 109, 182, 1);
+}
+
+.period_error {
+	font-size: 80%;
+	color: #ccc;
+	padding-left: 5px;
+	padding-top: 2px;
+	margin-bottom: 20px;
+}
+
+.format {
+	color: #016DB6;
+	margin-bottom: 20px;
+}
+
+.format_wrapper {
+	display: inline-block;
+	position: absolute;	
+	right: 0;
+}
+
+input.radio-tab {
+	position: absolute;
+    visibility: hidden;
+}
+
+input.radio-tab + label {
+	padding: 4px;
+	cursor: pointer;
+	position: relative;
+	color: #333;
+	border: 2px solid transparent;
+	border-radius: 3px;
+}
+
+input.radio-tab:checked + label {
+	border: 2px solid rgba(1, 109, 182, 1);
+	color: #016DB6;
+}
+
+.btn-class {
+	position: absolute;
+	margin-top: 10px;
+	right: 0;
+	display: inline-block;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px 3px 3px 3px;
+	-webkit-border-radius: 3px 3px 3px 3px;
+	-moz-border-radius: 3px 3px 3px 3px;
+	height: auto;
+	font-size: 14px;
+	text-decoration: none !important;
+	padding: 8px 20px 8px 40px;
+	opacity: .8;
+	color: #FFFFFF;
+	background: #016DB6 url("download_button.png") no-repeat 12px center;
+}
+
+.btn-class:hover {
+	opacity: 1;
+	cursor: pointer;
+}

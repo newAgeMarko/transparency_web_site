@@ -1,0 +1,26 @@
+{
+  "name": "components/flag-icon-css",
+  "type": "component",
+  "description": "CSS for vector based country flags",
+  "license": "MIT",
+  "authors":[
+    {
+      "name": "Panayiotis Lipiridis (Lipis)",
+      "email": "lipiridis@gmail.com"
+    }
+  ],
+  "extra":{
+    "component":{
+      "name": "flag-icon-css",
+      "files":[
+        "less/**",
+        "css/**",
+        "flags/**"
+      ]
+    }
+  },
+  "require": {
+    "monolog/monolog": "^1.19",
+    "phpzip/phpzip": ">=2.0.7"
+  }
+}

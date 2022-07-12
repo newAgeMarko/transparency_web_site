@@ -1,0 +1,3258 @@
+//colors
+$black: #000;
+$white: #fff;
+$color_storm_dust_approx: #666666;
+$black_70: rgba(0, 0, 0, 0.7);
+$color_radical_red_approx: #F25F5C;
+$siva: #757982;
+$white_70: rgba(255, 255, 255, 0.7);
+$white_50: rgba(255, 255, 255, 0.5);
+$black_75: rgba(0, 0, 0, 0.75);
+$color_mountain_mist_approx: #999999;
+$color_carnation_approx: #F25F5C;
+$color_red_orange_approx: #F25F5C;
+$black_15: rgba(0, 0, 0, 0.15);
+$color_fuscous_gray_approx: #525354;
+$color_shark_70_approx: rgba(39, 41, 43, 0.7);
+$color_silver_approx: #bfbfbf;
+$gray: gray;
+$concrete: #f2f2f2;
+$color_nobel_approx: #b3b3b3;
+$color_mercury_approx: #e6e6e6;
+$black_50: rgba(0, 0, 0, 0.5);
+$color_brink_pink_approx: #F25F5C;
+$color_botticelli_approx: #ccddea;
+$color_torch_red_approx: #F25F5C;
+$white_30: rgba(255, 255, 255, 0.3);
+$color_catskill_white_approx: #f0f5f9;
+$black_9: rgba(0, 0, 0, 0.09);
+$color_celeste_approx: #cccccc;
+$color_link_water_approx: #dae6ef;
+$color_outer_space_20_approx: rgba(42, 54, 59, 0.2);
+$color_chicago_approx: #5d5d5d;
+$black_30: rgba(0, 0, 0, 0.3);
+$color_radical_red_90_approx: rgba(247, 56, 89, 0.9);
+$white_40: rgba(255, 255, 255, 0.4);
+$color_gray_approx: #828282;
+$color_cloud_burst_90_approx: rgba(42, 51, 86, 0.9);
+$white_20: rgba(255, 255, 255, 0.2);
+$color_mine_shaft_approx: #252323;
+$white_80: rgba(255, 255, 255, 0.8);
+$color_tundora_approx: #444;
+$color_shark_approx: #252525;
+$color_fern_approx: #5cb85c;
+$color_apple_approx: #4cae4c;
+$color_viking_approx: #5bc0de;
+$color_picton_blue_approx: #46b8da;
+$color_casablanca_approx: #f0ad4e;
+$color_fuel_yellow_approx: #eea236;
+$color_chestnut_rose_approx: #F25F5C;
+$color_valencia_approx: #F25F5C;
+$black_10: rgba(0, 0, 0, 0.1);
+$color_wild_sand_approx: #f5f5f5;
+$color_brick_red_approx: #F25F5C;
+$color_gallery_approx: #eee;
+$color_monsoon_approx: #8a8989;
+
+//fonts
+$font_0: icomoon;
+$font_1: Roboto Mono;
+$font_2: serif;
+$font_3: #F25F5C Text;
+$font_4: Arial;
+$font_5: sans-serif;
+
+//urls
+$url_0: url(../fonts/icomoon/icomoon.eot?srf3rx);
+$url_1: url(../fonts/icomoon/icomoon.eot?srf3rx#iefix);
+$url_2: url(../fonts/icomoon/icomoon.ttf?srf3rx);
+$url_3: url(../fonts/icomoon/icomoon.woff?srf3rx);
+$url_4: url(../fonts/icomoon/icomoon.svg?srf3rx#icomoon);
+$url_5: url(../images/loader.gif);
+
+//@extend-elements
+//original selectors
+//a:hover, a:active, a:focus
+%extend_1 {
+	color: $color_radical_red_approx;
+	outline: none;
+	text-decoration: none;
+}
+
+//original selectors
+//h1, h2, h3, h4, h5, h6, figure
+%extend_2 {
+	color: $color_mine_shaft_approx;
+	//font-family: $font_3, $font_4, $font_5;
+	font-weight: 400;
+	margin: 0 0 20px 0;
+}
+
+%extend_3 {
+	position: absolute;
+	font-size: 35px;
+	text-align: center;
+	line-height: 0px;
+	width: 15px;
+	height: 15px;
+}
+
+%extend_4 {
+	color: $color_radical_red_approx;
+	transition: .3s ease;
+	cursor: pointer;
+}
+
+
+@font-face {
+	font-family: $font_0;
+	src: $url_0;
+	src: $url_1 format("embedded-opentype"), $url_2 format("truetype"), $url_3 format("woff"), $url_4 format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+body {
+	font-family: $font_1, $font_2;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 1.6;
+	color: $color_storm_dust_approx;
+}
+#page {
+	position: relative;
+// 	overflow-x: hidden;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.5s;
+}
+.offcanvas {
+	#page {
+		overflow: hidden;
+		position: absolute;
+		&:after {
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: 2s;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 101;
+			background: $black_70;
+			content: "";
+		}
+	}
+	#gtco-offcanvas {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: translateX(0px);
+	}
+}
+a {
+// 	color: $color_radical_red_approx;
+	color: $siva;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.5s;
+	&:hover {
+		@extend %extend_1;
+	}
+	&:active {
+		@extend %extend_1;
+	}
+	&:focus {
+		@extend %extend_1;
+	}
+}
+p {
+	margin-bottom: 20px;
+}
+h1 {
+	@extend %extend_2;
+}
+h2 {
+	@extend %extend_2;
+}
+h3 {
+	@extend %extend_2;
+}
+h4 {
+	@extend %extend_2;
+}
+h5 {
+	@extend %extend_2;
+}
+h6 {
+	@extend %extend_2;
+}
+figure {
+	@extend %extend_2;
+	figcaption {
+		padding-top: 15px;
+		font-size: 12px;
+		font-family: $font_1, $font_2;
+		color: $color_mountain_mist_approx;
+	}
+}
+::-webkit-selection {
+	color: $white;
+	background: $color_radical_red_approx;
+}
+::-moz-selection {
+	color: $white;
+	background: $color_radical_red_approx;
+}
+::selection {
+	color: $white;
+	background: $color_radical_red_approx;
+}
+// moj proizvoljni container
+.my_container {
+// 		margin: 0 auto;
+// 		padding-bottom: 18px;
+// 		border-bottom: 1px solid $white_70;
+// 		width: 70%;		
+
+		.text-left {
+			padding-top: 15px;
+		}
+
+		h1 {
+			position: relative;
+			color: #525354;
+			font-size: 20px;
+			margin-bottom: 50px;
+		}
+	}
+.gtco-nav {
+	position: fixed;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	padding: 5px 0;
+	z-index: 1001;
+	background: transparent;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.5s;
+
+	#gtco-logo {
+		font-size: 24px;
+		padding: 0;
+		margin: 0;
+		text-transform: uppercase;
+		font-weight: bold;		
+
+		span {
+			color: $color_radical_red_approx;
+			font-size: 33px;
+			position: relative;
+			&:before {
+				content: '';
+				width: 9px;
+				height: 2px;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: rotate(-55deg);
+				background: #f7385900;
+				position: absolute;
+				left: 2px;
+				top: 11px;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: .3s linear;
+			}
+			&:after {
+				content: '';
+				width: 9px;
+				height: 2px;
+				//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+				transform: rotate(-55deg);
+				background: #f7385900;
+				position: absolute;
+				left: 8px;
+				top: 11px;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: .3s linear;
+			}
+		}
+		&:before {
+			content: none;
+			width: 6px;
+			height: 3px;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: rotate(-54deg);
+			background: #f7385900;
+			position: absolute;
+			left: 22px;
+			top: 17px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: .3s linear;
+		}
+		&:after {
+			content: none;
+			width: 6px;
+			height: 3px;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: rotate(54deg);
+			background: #f7385900;
+			position: absolute;
+			left: 42px;
+			top: 17px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: .3s linear;
+		}
+		&:hover {
+			&:before {
+				background: $color_radical_red_approx;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: .3s linear;
+			}
+			&:after {
+				background: $color_radical_red_approx;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: .3s linear;
+			}
+			span {
+				&:before {
+					background: $color_radical_red_approx;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+					transition: .35s linear;
+				}
+				&:after {
+					background: $color_radical_red_approx;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+					transition: .35s linear;
+				}
+			}
+		}
+		a > span {
+			color: $color_radical_red_approx;
+		}
+	}
+	a {
+		padding: 5px 10px;
+		color: $white;
+	}
+	ul {
+		padding: 0;
+		margin: 5px 0 0;
+		padding-right: 27px;
+		&:first-child {
+			padding-right: 20px;
+		}
+		li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			display: inline;
+			font-family: $font_1, $font_2;
+			> a {
+				font-size: 12px;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				padding: 30px 6px;
+				color: $white_50;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: 0.5s;
+				word-spacing: -3px;
+				&:hover {
+					color: $white;
+				}
+				&:focus {
+					color: $white;
+				}
+				&:active {
+					color: $white;
+				}
+			}
+			&.has-dropdown {
+				position: relative;
+				.dropdown {
+					width: 190px;
+					//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+					box-shadow: 0 8px 13px 1px $black_75;
+					z-index: 1002;
+					visibility: hidden;
+					opacity: 0;
+					position: absolute;
+					top: 40px;
+					left: 0;
+					text-align: left;
+					background: $white;
+					padding: 8px;
+					//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+					border-radius: 4px;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+					transition: 0s;
+					&:before {
+						bottom: 100%;
+						left: 40px;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+						border-bottom-color: $white;
+						border-width: 8px;
+						margin-left: -8px;
+					}
+					li {
+						display: block;
+						margin-bottom: 7px;
+						&:last-child {
+							margin-bottom: 0;
+						}
+						> a {
+							letter-spacing: inherit;
+							padding: 2px 0;
+							display: block;
+							color: $color_mountain_mist_approx;
+							line-height: 1.2;
+							text-transform: none;
+							font-size: 13px;
+							&:hover {
+								color: $black;
+							}
+						}
+					}
+				}
+				&:hover a {
+					color: $white;
+				}
+				&:focus a {
+					color: $white;
+				}
+			}
+			&.btn-cta a {
+				color: $color_radical_red_approx;
+				span {
+					background: $color_carnation_approx;
+					color: $white;
+					padding: 4px 20px;
+					display: inline-block;
+					zoom: 1;
+					*display: inline;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+					transition: 0.3s;
+					//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+					border-radius: 4px;
+				}
+				&:hover span {
+					background: $color_red_orange_approx !important;
+					//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+					box-shadow: 0 14px 20px -9px $black_75;
+				}
+			}
+			&.active > a {
+				color: $white;
+				position: relative;
+			}
+		}
+		.has-dropdown-sub {
+			position: relative;
+			&:hover .dropdown_sub {
+				display: block;
+				left: 100%;
+				top: -12px;
+				position: absolute;
+				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				box-shadow: 0 8px 13px 1px $black_75;
+			}
+		}
+	}
+	
+}
+@media screen and(max-width: 768px) {
+// 	.gtco-nav {
+// 		padding: 25px 0;
+// 		#gtco-logo {
+// 			margin-bottom: 0;
+// 		}
+// 		.menu-1 {
+// 			display: none;
+// 		}
+// 	}
+	.dropdown_sub {
+// 		background-color: $black !important;
+	}
+	.gtco-cover {
+		height: 600px;
+		.display-t {
+			height: 600px;
+		}
+		.display-tc {
+			height: 600px;
+			h1 {
+				font-size: 40px;
+			}
+		}
+		&.gtco-cover-sm {
+			height: 400px;
+			.display-t {
+				height: 400px;
+			}
+			.display-tc {
+				height: 400px;
+			}
+		}
+	}
+	article {
+		margin-bottom: 40px;
+		padding-left: 15px;
+		padding-right: 15px;
+		h2 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+	}
+	#gtco-counter {
+		padding: 3em 0;
+		.feature-center {
+			margin-bottom: 30px;
+		}
+		.display-tc h1 {
+			font-size: 40px;
+		}
+	}
+	#gtco-services {
+		padding: 3em 0;
+	}
+	#gtco-main {
+		padding: 3em 0;
+	}
+	#gtco-started {
+		padding: 3em 0;
+	}
+	#gtco-testimonial {
+		padding: 3em 0;
+		.testimonial.gtco-selected {
+			bottom: 0;
+		}
+	}
+	#gtco-blog {
+		padding: 3em 0;
+		.gtco-post {
+			&:hover {
+				bottom: 0;
+			}
+			&:focus {
+				bottom: 0;
+			}
+		}
+	}
+	#gtco-project {
+		padding: 3em 0;
+		.gtco-project > a {
+			.gtco-copy {
+				position: relative;
+				visibility: visible;
+				opacity: 1;
+				bottom: 0;
+				color: $black;
+				padding: 20px;
+				background: $white;
+			}
+			&:hover {
+				bottom: 0;
+				&:after {
+					opacity: 0;
+					visibility: hidden;
+				}
+				.gtco-copy {
+					bottom: 0;
+					padding: 20px;
+					background: $white;
+				}
+				img {
+					//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+					transform: scale(1);
+				}
+			}
+		}
+	}
+	#gtco-about {
+		padding: 3em 0;
+	}
+	#gtco-team {
+		padding: 3em 0;
+	}
+	#gtco-contact {
+		padding: 3em 0;
+	}
+	#gtco-footer {
+		padding: 3em 0;
+		.gtco-widget {
+			text-align: left;
+		}
+	}
+	.feature-center {
+		margin-bottom: 50px;
+		&:hover {
+			bottom: 0;
+		}
+		&:focus {
+			bottom: 0;
+		}
+	}
+	.project-content {
+		padding: 3em 0;
+		.desc {
+			bottom: 0;
+		}
+	}
+	#gtco-offcanvas {
+		display: block;
+	}
+	.gtco-nav-toggle {
+		display: block;
+	}
+	#gtco-header .display-tc h1 {
+		font-size: 40px;
+	}
+	.project-grid .desc {
+		bottom: 0;
+	}
+}
+.scrolled {
+	.gtco-nav {
+		background: $white;
+		padding: 0;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 5px 7px -7px $black_15;
+
+		a {
+			color: $color_fuscous_gray_approx;
+		}
+		> .container {
+			padding-bottom: 0;
+			border-bottom: 1px solid transparent;
+		}
+		ul li {
+			a {
+				&:hover {
+					color: $color_radical_red_approx !important;
+				}
+				&:focus {
+					color: $color_radical_red_approx !important;
+				}
+				&:active {
+					color: $color_radical_red_approx !important;
+				}
+			}
+			&.has-dropdown {
+				&:hover > a {
+					color: $color_radical_red_approx;
+				}
+				&:focus > a {
+					color: $color_radical_red_approx;
+				}
+			}
+			&.active a {
+				color: $color_radical_red_approx;
+			}
+		}
+	}
+	.gtco-nav-toggle {
+		top: 5px;
+	}
+}
+#gtco-header {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	img {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		animation: shrink 14s infinite alternate;
+		position: absolute;
+		overflow: overlay;
+		&.cover2 {
+			animation: none;
+		}
+	}
+	.date-post {
+		display: block;
+		color: $white_50;
+		font-size: 15px;
+		text-transform: uppercase;
+	}
+	a {
+		color: $white;
+		&:hover {
+			color: $white;
+		}
+	}
+	.display-tc {
+		display: table-cell !important;
+		vertical-align: middle;
+		h1 {
+			margin: 0;
+			padding: 0;
+			color: $white;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-size: 60px;
+			line-height: 1.1;
+			font-family: $font_3, $font_4, $font_5;
+			font-weight: 300;
+		}
+		h2 {
+			margin: 0;
+			padding: 0;
+			color: $white;
+			font-size: 20px;
+			line-height: 1.5;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+		}
+		.btn {
+			padding: 15px 30px;
+			background: $color_radical_red_approx;
+			color: $white;
+			border: none !important;
+			font-size: 18px;
+			text-transform: uppercase;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 4px;
+			&:hover {
+				background: $color_torch_red_approx !important;
+				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				box-shadow: 0 14px 30px -15px $black_75 !important;
+			}
+		}
+		.or {
+			color: $white_30;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			padding: 0 20px;
+		}
+		.text-link {
+			border-bottom: none;
+			font-family: $font_3, $font_4, $font_5;
+			font-size: 14px;
+			color: $color_radical_red_approx;
+			font-family: $font_1, $font_2;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			&:hover {
+				color: $white;
+			}
+		}
+		.form-inline .form-group {
+			width: 100% !important;
+			margin-bottom: 10px;
+			.form-control {
+				width: 100%;
+				background: $white;
+				border: none;
+			}
+		}
+	}
+}
+#gtco-counter {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	background: $white;
+	padding: 7em 0;
+	text-align: center;
+	.display-tc {
+		display: table-cell !important;
+		vertical-align: middle;
+		h1 {
+			margin: 0;
+			padding: 0;
+			color: $white;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-size: 60px;
+			line-height: 1.1;
+			font-family: $font_3, $font_4, $font_5;
+			font-weight: 300;
+		}
+		h2 {
+			margin: 0;
+			padding: 0;
+			color: $white;
+			font-size: 20px;
+			line-height: 1.5;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+		}
+		.btn {
+			padding: 15px 30px;
+			background: $color_radical_red_approx;
+			color: $white;
+			border: none !important;
+			font-size: 18px;
+			text-transform: uppercase;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 4px;
+			&:hover {
+				background: $color_torch_red_approx !important;
+				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				box-shadow: 0 14px 30px -15px $black_75 !important;
+			}
+		}
+		.or {
+			color: $white_30;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			padding: 0 20px;
+		}
+		.text-link {
+			border-bottom: none;
+			font-family: $font_3, $font_4, $font_5;
+			font-size: 14px;
+			color: $color_radical_red_approx;
+			font-family: $font_1, $font_2;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			&:hover {
+				color: $white;
+			}
+		}
+		.form-inline .form-group {
+			width: 100% !important;
+			margin-bottom: 10px;
+			.form-control {
+				width: 100%;
+				background: $white;
+				border: none;
+			}
+		}
+	}
+	.counter {
+		font-size: 50px;
+		margin-bottom: 10px;
+		color: $color_radical_red_approx;
+		font-weight: 100;
+		display: block;
+	}
+	.counter-label {
+		margin-bottom: 0;
+		text-transform: uppercase;
+		color: $black_50;
+		letter-spacing: .1em;
+	}
+	.icon {
+		width: 70px;
+		text-align: center;
+		margin-bottom: 20px;
+		background: none !important;
+		border: none !important;
+		i {
+			height: 70px;
+			&:before {
+				color: $color_celeste_approx;
+				display: block;
+				text-align: center;
+				margin-left: 3px;
+			}
+		}
+	}
+	.feature-center:hover .counter {
+		color: $white;
+	}
+}
+.gtco-bg {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	float: left;
+	position: relative;
+}
+.gtco-cover {
+	height: 900px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+	float: left;
+	width: 100%;
+	.overlay {
+		z-index: 0;
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: $color_shark_70_approx;
+	}
+	.display-t {
+		z-index: 9;
+		height: 900px;
+		display: table;
+		width: 100%;
+	}
+	.display-tc {
+		z-index: 9;
+		height: 900px;
+		display: table;
+		width: 100%;
+		display: table-cell !important;
+		vertical-align: middle;
+		h1 {
+			margin: 0;
+			padding: 0;
+			color: $white;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-size: 60px;
+			line-height: 1.1;
+			font-family: $font_3, $font_4, $font_5;
+			font-weight: 300;
+		}
+		h2 {
+			margin: 0;
+			padding: 0;
+			color: $white;
+			font-size: 20px;
+			line-height: 1.5;
+			margin-bottom: 30px;
+			text-transform: uppercase;
+		}
+		.btn {
+			padding: 15px 30px;
+			background: $color_radical_red_approx;
+			color: $white;
+			border: none !important;
+			font-size: 18px;
+			text-transform: uppercase;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 4px;
+			&:hover {
+				background: $color_torch_red_approx !important;
+				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				box-shadow: 0 14px 30px -15px $black_75 !important;
+			}
+		}
+		.or {
+			color: $white_30;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			padding: 0 20px;
+		}
+		.text-link {
+			border-bottom: none;
+			font-family: $font_3, $font_4, $font_5;
+			font-size: 14px;
+			color: $color_radical_red_approx;
+			font-family: $font_1, $font_2;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			&:hover {
+				color: $white;
+			}
+		}
+		.form-inline .form-group {
+			width: 100% !important;
+			margin-bottom: 10px;
+			.form-control {
+				width: 100%;
+				background: $white;
+				border: none;
+			}
+		}
+	}
+	&.gtco-cover-sm {
+		height: 600px;
+		.display-t {
+			height: 600px;
+			display: table;
+			width: 100%;
+		}
+		.display-tc {
+			height: 600px;
+			display: table;
+			width: 100%;
+		}
+	}
+	> .gtco-container {
+		position: relative;
+		z-index: 10;
+	}
+}
+.gtco-staff {
+	text-align: center;
+	margin-bottom: 30px;
+	background: $white;
+	padding: 30px;
+	float: left;
+	width: 100%;
+	img {
+		width: 100px;
+		margin-bottom: 20px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 50%;
+	}
+	h3 {
+		font-size: 24px;
+		margin-bottom: 5px;
+	}
+	p {
+		margin-bottom: 30px;
+	}
+	.role {
+		color: $color_silver_approx;
+		margin-bottom: 30px;
+		font-weight: normal;
+		display: block;
+	}
+}
+#gtco-main {
+	width: 100%;
+	float: left;
+	//padding: 7em 0;
+	clear: both;
+// 	padding-bottom: 6em;
+
+	.related-title {
+		font-size: 18px;
+		text-transform: uppercase;
+		font-family: $font_1, $font_2;
+		color: $black;
+		margin-bottom: 50px;
+	}
+}
+.mt-negative {
+	top: -7em;
+	position: relative;
+	z-index: 200;
+}
+article {
+	text-align: center;
+	float: left;
+	margin-bottom: 0;
+	padding: 3em;
+	background: $white;
+	position: relative;
+	p {
+		margin-bottom: 30px;
+	}
+	a {
+		img {
+			opacity: 1;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: 0.5s;
+		}
+		&:hover img {
+			opacity: .4;
+		}
+	}
+	figure {
+		margin-bottom: 30px;
+	}
+	h2 {
+		font-family: $font_3, $font_4, $font_5;
+		font-size: 34px;
+		color: $black;
+		margin-bottom: 30px;
+		a {
+			color: $black;
+		}
+	}
+	.gtco-meta {
+		font-size: 16px;
+		font-family: $font_1, $font_2;
+		color: $color_mountain_mist_approx;
+		margin-bottom: 20px;
+		display: block;
+		&.gtco-date {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+	}
+	.content-article {
+		padding-top: 1em;
+		a {
+			text-decoration: underline;
+		}
+		blockquote {
+			border-left: none;
+			padding-left: 0;
+			p {
+				font-family: $font_3, $font_4, $font_5;
+				font-size: 27px;
+				font-style: italic;
+				line-height: 1.5;
+				color: $black;
+				cite {
+					padding-top: 20px;
+					display: block;
+					font-size: 14px;
+					font-style: normal;
+					font-family: $font_1, $font_2;
+					color: $gray;
+				}
+			}
+		}
+	}
+	.gtco-highlight {
+		border: 4px solid $concrete;
+		padding: 30px;
+		width: 100%;
+		margin-bottom: 30px;
+		&.right {
+			float: right;
+			margin-left: 30px;
+		}
+		&.left {
+			float: left;
+		}
+		h4 {
+			font-size: 14px;
+			letter-spacing: 2px;
+			color: $color_nobel_approx;
+			text-transform: uppercase;
+			font-family: $font_1, $font_2;
+		}
+		p {
+			font-family: $font_3, $font_4, $font_5;
+			font-style: italic;
+			color: $black;
+			font-size: 20px;
+		}
+	}
+}
+@media screen and(max-width: 1200px) {
+	article {
+		margin-bottom: 80px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@media screen and(max-width: 992px) {
+	article {
+		margin-bottom: 80px;
+		padding-left: 15px;
+		padding-right: 15px;
+		h2 {
+			font-size: 26px;
+		}
+	}
+}
+@media screen and(max-width: 480px) {
+	article .gtco-meta {
+		margin-bottom: 10px;
+	}
+	.project-content .col-half {
+		width: 100%;
+		.project {
+			height: 340px !important;
+			margin-bottom: 20px;
+		}
+		.project-grid {
+			height: 340px !important;
+			margin-bottom: 20px;
+		}
+	}
+}
+.pagination {
+	a {
+		background: none;
+		border: none !important;
+		color: $gray !important;
+		&:hover {
+			background: none !important;
+		}
+		&:focus {
+			background: none !important;
+		}
+		&:active {
+			background: none !important;
+		}
+	}
+	> li {
+		> a {
+			margin: 0 2px;
+			font-size: 18px;
+			padding: 0 !important;
+			background: none;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 50% !important;
+			height: 50px;
+			width: 50px;
+			line-height: 50px;
+			display: table-cell;
+			vertical-align: middle;
+			z-index: 10;
+			&:hover {
+				color: $color_radical_red_approx !important;
+				background: $color_mercury_approx !important;
+			}
+		}
+		&.disabled > a {
+			background: none;
+		}
+		&.active > a {
+			z-index: 19;
+			background: $white !important;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 4px 11px 35px -14px $black_50;
+			color: $color_radical_red_approx !important;
+			&:hover {
+				cursor: pointer;
+				background: $color_brink_pink_approx !important;
+			}
+		}
+	}
+}
+.gtco-social-icons {
+	margin: 0;
+	padding: 0;
+	li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: inline-block;
+		zoom: 1;
+	//	* display: inline;
+		border-right: 1px solid $color_storm_dust_approx;
+		&:last-child {
+			border: 0;
+		}
+		a {
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+			//color: $color_radical_red_approx;
+			color: #b33030;
+			padding-left: 10px;
+			padding-right: 10px;
+			i {
+				font-size: 20px;
+			}
+		}
+	}
+}
+.gtco-bg-section {
+	background: $color_catskill_white_approx;
+}
+#gtco-services {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+	&.border-bottom {
+		border-bottom: 1px solid $color_link_water_approx;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 5px 7px -7px $black_15;
+		position: relative;
+		z-index: 10;
+	}
+}
+#gtco-started {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+	background: $color_cloud_burst_90_approx;
+	.gtco-heading {
+		h2 {
+			color: $white;
+			margin-bottom: 20px !important;
+			font-weight: 300;
+		}
+		p {
+			color: $white_50;
+		}
+	}
+	.form-control {
+		background: $white_20;
+		border: none !important;
+		color: $white;
+		font-size: 16px !important;
+		width: 100%;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: 0.5s;
+		&:-moz-placeholder {
+			color: $white;
+		}
+		&:-ms-input-placeholder {
+			color: $white;
+		}
+		&:focus {
+			background: $white_30;
+		}
+	}
+	.form-control::-webkit-input-placeholder {
+		color: $white;
+	}
+	.form-control::-moz-placeholder {
+		color: $white;
+	}
+	.btn {
+		height: 54px;
+		border: none !important;
+		background: $color_radical_red_approx;
+		color: $white;
+		font-size: 16px;
+		text-transform: uppercase;
+		font-weight: 400;
+		padding-left: 30px;
+		padding-right: 30px;
+		&:hover {
+			background: $color_torch_red_approx !important;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 14px 20px -9px $black_75 !important;
+		}
+	}
+	.form-inline .form-group {
+		width: 100% !important;
+		margin-bottom: 10px;
+		.form-control {
+			width: 100%;
+		}
+	}
+}
+#gtco-testimonial {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+	background: $color_catskill_white_approx;
+	.testimonial {
+		background: $white;
+		padding: 30px;
+		position: relative;
+		margin-bottom: 4em;
+		bottom: 0;
+		blockquote {
+			border-left: none;
+			padding: 0;
+			margin: 0;
+		}
+		p {
+			color: $color_storm_dust_approx;
+			font-size: 18px;
+			font-style: italic;
+			line-height: 1.5;
+			&.author {
+				color: $color_nobel_approx;
+				img {
+					width: 60px;
+					margin-right: 20px;
+					//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+					border-radius: 50%;
+				}
+				cite {
+					font-style: normal;
+					font-size: 13px;
+					font-family: $font_3, $font_4, $font_5;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&:after {
+			position: absolute;
+			left: 11%;
+			bottom: -30px;
+			display: block;
+			width: 0;
+			content: "";
+			border-width: 30px 30px 0 0;
+			border-style: solid;
+			border-color: $white transparent;
+		}
+		&.gtco-selected {
+			background: $color_radical_red_approx;
+			bottom: 10px;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: 0 18px 71px -10px $black_75;
+			p {
+				color: $white;
+				&.author cite {
+					color: $white_70;
+				}
+			}
+			&:after {
+				border-color: $color_radical_red_approx transparent;
+			}
+		}
+	}
+}
+#gtco-blog {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+	.gtco-post {
+		background: $white;
+		float: left;
+		width: 100%;
+		margin-bottom: 30px;
+		padding: 30px;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: -2px 11px 24px -10px $black_9;
+		position: relative;
+		bottom: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: 0.3s;
+		h3 {
+			margin-bottom: 20px;
+			a {
+				color: $color_radical_red_approx;
+				&:hover {
+					color: $color_carnation_approx;
+				}
+			}
+		}
+		.gtco-date {
+			display: block;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+			font-size: 12px;
+			color: $color_celeste_approx;
+			letter-spacing: .07em;
+		}
+		p {
+			&.author {
+				color: $color_nobel_approx;
+				img {
+					width: 50px;
+					margin-right: 10px;
+					//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+					border-radius: 50%;
+				}
+				cite {
+					font-style: normal;
+					font-size: 13px;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&:hover {
+			bottom: 10px;
+		}
+		&:focus {
+			bottom: 10px;
+		}
+	}
+}
+#gtco-project {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+	.gtco-project {
+		margin-bottom: 30px;
+		> a {
+			display: block;
+			color: $black;
+			position: relative;
+			bottom: 0;
+			overflow: hidden;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: 0.5s;
+			img {
+				position: relative;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: 0.5s;
+			}
+			&:after {
+				opacity: 0;
+				visibility: hidden;
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				top: 0;
+				background: $black_70;
+				z-index: 8;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: 0.5s;
+			}
+			.gtco-copy {
+				z-index: 12;
+				position: absolute;
+				right: 20px;
+				left: 20px;
+				bottom: 0;
+				opacity: 0;
+				visibility: hidden;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: 0.3s;
+				h3 {
+					margin: 0 0 5px 0;
+					padding: 0;
+					color: $white;
+					font-size: 20px;
+					font-weight: 400;
+				}
+				p {
+					color: $white_50;
+					font-size: 14px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+			&:hover {
+				//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+				box-shadow: 0 18px 71px -10px $black_75;
+				&:after {
+					opacity: 1;
+					visibility: visible;
+				}
+				.gtco-copy {
+					opacity: 1;
+					visibility: visible;
+					bottom: 20px;
+				}
+				img {
+					//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+#gtco-about {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+}
+#gtco-team {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+}
+#gtco-contact {
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+}
+#gtco-footer {
+	position: relative;
+	padding: 7em 0;
+	clear: both;
+	padding-bottom: 6em;
+	background: $color_mine_shaft_approx;
+
+    &:after {
+    	content: '';
+    	background: url('../images/ems2.png');
+		opacity: 0.45;
+		top: 150px;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;
+		background-repeat: no-repeat;
+		background-position: center;
+    }
+
+	h3 {
+		color: $white;
+	}
+	.footer-heading {
+		margin-bottom: 50px;
+	}
+	.post-meta {
+		position: relative !important;
+		display: block;
+		padding: 0;
+		float: left;
+		color: $white_30;
+		.date-posted {
+			margin-left: 0;
+		}
+	}
+	.footer-logo {
+		font-family: $font_1, $font_2;
+		span {
+			color: $color_radical_red_approx;
+		}
+	}
+	.gtco-footer-links {
+		padding: 0;
+		margin: 0;
+		li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			a {
+				color: $white;
+				text-decoration: none;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	.gtco-widget {
+		margin-bottom: 30px;
+		h3 {
+			margin-bottom: 15px;
+			font-weight: bold;
+			font-size: 15px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			color: $white;
+		}
+	}
+	.copyright .block {
+		display: block;
+		color: #716f6d;
+	}
+}
+.feature-center {
+	padding: 30px;
+	float: left;
+	width: 100%;
+	position: relative;
+	bottom: 0;
+	margin-bottom: 40px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.3s;
+	.desc {
+		padding-left: 180px;
+	}
+	.icon {
+		margin-bottom: 20px;
+		display: block;
+		i {
+			font-size: 40px;
+			color: $color_outer_space_20_approx;
+		}
+	}
+	.icon2 {
+		float: left;
+		i {
+			font-size: 100px;
+		}
+	}
+	p {
+		margin-bottom: 30px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+	h3 {
+		margin-bottom: 30px;
+		font-size: 22px;
+		color: $color_chicago_approx;
+	}
+	&:hover {
+		background: $color_radical_red_approx;
+		bottom: 10px;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 18px 71px -10px $black_75;
+		p {
+			color: $white !important;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		h3 {
+			color: $white !important;
+		}
+		a {
+			color: $white_70;
+			&:hover {
+				color: $white;
+			}
+		}
+		.icon i {
+			color: $white_70;
+		}
+	}
+	&:focus {
+		background: $color_radical_red_approx;
+		bottom: 10px;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: 0 18px 71px -10px $black_75;
+		p {
+			color: $white !important;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		h3 {
+			color: $white !important;
+		}
+		a {
+			color: $white_70;
+			&:hover {
+				color: $white;
+			}
+			.activeLink{
+					
+			}
+		}
+		.icon i {
+			color: $white_70;
+		}
+	}
+}
+.project-grid {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	position: relative;
+	overflow: hidden;
+	height: 350px;
+	margin-bottom: 40px;
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		content: '';
+		background: $black_30;
+		opacity: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: 0.1s;
+	}
+	.desc {
+		background: $color_radical_red_90_approx;
+		padding: 10px 20px;
+		position: absolute;
+		bottom: -93px;
+		left: 0;
+		right: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: 0.1s;
+		span {
+			color: $white_40;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 12px;
+		}
+		h3 a {
+			color: $white;
+		}
+	}
+	&:hover {
+		&:before {
+			opacity: 1;
+		}
+		.desc {
+			bottom: 0;
+		}
+	}
+	&:focus {
+		&:before {
+			opacity: 1;
+		}
+		.desc {
+			bottom: 0;
+		}
+	}
+}
+.project-content {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	float: left;
+	padding: 7em 0;
+	.col-half {
+		width: 50%;
+		float: left;
+		padding-left: 10px;
+		padding-right: 10px;
+		.project {
+			background-size: cover;
+			background-position: top center;
+			background-repeat: no-repeat;
+			position: relative;
+			overflow: hidden;
+			height: 800px;
+			&:before {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				content: '';
+				background: $black_30;
+				opacity: 0;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: 0.1s;
+			}
+			&:hover {
+				&:before {
+					opacity: 1;
+				}
+				.desc {
+					bottom: 0;
+				}
+			}
+			&:focus {
+				&:before {
+					opacity: 1;
+				}
+				.desc {
+					bottom: 0;
+				}
+			}
+		}
+		.project-grid {
+			background-size: cover;
+			background-position: top center;
+			background-repeat: no-repeat;
+			position: relative;
+			overflow: hidden;
+			height: 390px;
+			margin-bottom: 20px;
+			&:before {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				content: '';
+				background: $black_30;
+				opacity: 0;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: 0.1s;
+			}
+			&:hover {
+				&:before {
+					opacity: 1;
+				}
+				.desc {
+					bottom: 0;
+				}
+			}
+			&:focus {
+				&:before {
+					opacity: 1;
+				}
+				.desc {
+					bottom: 0;
+				}
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.desc {
+		background: $color_radical_red_90_approx;
+		padding: 10px 20px;
+		position: absolute;
+		bottom: -93px;
+		left: 0;
+		right: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: 0.1s;
+		h3 {
+			color: $white;
+		}
+		span {
+			color: $white_40;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 12px;
+		}
+	}
+}
+.gtco-heading {
+	margin-bottom: 2em;
+	&.gtco-heading-sm {
+		margin-bottom: 2em;
+	}
+	h2 {
+		font-size: 55px;
+		margin-bottom: 0;
+		line-height: 1.5;
+		font-weight: 300;
+		color: $black;
+	}
+	p {
+		font-size: 18px;
+		line-height: 1.5;
+		color: $color_gray_approx;
+	}
+	span {
+		display: block;
+		margin-bottom: 10px;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 2px;
+		color: $color_celeste_approx;
+	}
+}
+#gtco-offcanvas {
+	position: fixed;
+	z-index: 1901;
+	width: 270px;
+	background: $black;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	padding: 45px 40px 40px;
+	overflow-y: auto;
+	display: none;
+	//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+	transform: translateX(270px);
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.5s;
+	a {
+		color: $white_50;
+		&:hover {
+			color: $white_80;
+		}
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			> ul {
+				padding-left: 20px;
+				display: none;
+			}
+			&.offcanvas-has-dropdown {
+				> a {
+					display: block;
+					position: relative;
+					&:after {
+						position: absolute;
+						right: 0;
+						font-family: $font_0;
+					//	speak: none;
+						font-style: normal;
+						font-weight: normal;
+						font-variant: normal;
+						text-transform: none;
+						line-height: 1;
+						content: "\e921";
+						font-size: 20px;
+						color: $white_20;
+						//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+						transition: 0.5s;
+					}
+				}
+				&.active a:after {
+					//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+					transform: rotate(-180deg);
+				}
+			}
+		}
+	}
+}
+.uppercase {
+	font-size: 14px;
+	color: $black;
+	margin-bottom: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.gototop {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	z-index: 999;
+	opacity: 0;
+	visibility: hidden;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.5s;
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+	a {
+		width: 50px;
+		height: 50px;
+		display: table;
+		background: $black_50;
+		color: $white;
+		text-align: center;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 4px;
+		i {
+			height: 50px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		&:hover {
+			text-decoration: none;
+			outline: none;
+		}
+		&:active {
+			text-decoration: none;
+			outline: none;
+		}
+		&:focus {
+			text-decoration: none;
+			outline: none;
+		}
+	}
+}
+.gtco-nav-toggle {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	text-decoration: none;
+	position: fixed;
+	right: 0;
+	top: 18px;
+	z-index: 21;
+	padding: 6px 0 0;
+	display: block;
+	margin: 0 auto;
+	display: none;
+	height: 44px;
+	width: 44px;
+	z-index: 2001;
+	border-bottom: none !important;
+	&.active {
+		i::before {
+			background: $color_tundora_approx;
+			top: 0;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: rotateZ(45deg);
+		}
+		i::after {
+			background: $color_tundora_approx;
+			bottom: 0;
+			//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+			transform: rotateZ(-45deg);
+		}
+		i {
+			background: transparent;
+		}
+	}
+	&:hover {
+		outline: none;
+		border-bottom: none !important;
+		i::before {
+			top: -10px;
+		}
+		i::after {
+			bottom: -10px;
+		}
+	}
+	&:focus {
+		outline: none;
+		border-bottom: none !important;
+	}
+	&:active {
+		outline: none;
+		border-bottom: none !important;
+	}
+	i {
+		position: relative;
+		display: inline-block;
+		width: 25px;
+		height: 2px;
+		color: $color_shark_approx;
+		font: bold 14px/.4 Helvetica;
+		text-transform: uppercase;
+		text-indent: -55px;
+		background: $color_shark_approx;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all .2s ease-out;
+	}
+	i::before {
+		content: '';
+		width: 25px;
+		height: 2px;
+		background: $color_shark_approx;
+		position: absolute;
+		left: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all .2s ease-out;
+		top: -7px;
+	}
+	i::after {
+		content: '';
+		width: 25px;
+		height: 2px;
+		background: $color_shark_approx;
+		position: absolute;
+		left: 0;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: all .2s ease-out;
+		bottom: -7px;
+	}
+	&.gtco-nav-white {
+		> i {
+			color: $white;
+			background: $white;
+		}
+		> i::before {
+			background: $white;
+		}
+		> i::after {
+			background: $white;
+		}
+	}
+}
+.btn {
+	margin-right: 4px;
+	margin-bottom: 4px;
+	font-family: $font_3, $font_4, $font_5;
+	font-size: 16px;
+	font-weight: 400;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.5s;
+	padding: 8px 20px;
+	&.btn-md {
+		padding: 8px 20px !important;
+	}
+	&.btn-lg {
+		padding: 18px 36px !important;
+	}
+	&:hover {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none !important;
+		outline: none !important;
+	}
+	&:active {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none !important;
+		outline: none !important;
+	}
+	&:focus {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none !important;
+		outline: none !important;
+	}
+	&.with-arrow {
+		position: relative;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: 0.3s;
+		i {
+			visibility: hidden;
+			opacity: 0;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -8px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: 0.2s;
+		}
+		&:hover {
+			padding-right: 50px;
+			i {
+				color: $white;
+				right: 18px;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}
+.btn-primary {
+	background: $color_radical_red_approx;
+	color: $white;
+	border: 2px solid $color_radical_red_approx;
+	&:hover {
+		background: $color_carnation_approx !important;
+		border-color: $color_carnation_approx !important;
+	}
+	&:focus {
+		background: $color_carnation_approx !important;
+		border-color: $color_carnation_approx !important;
+	}
+	&:active {
+		background: $color_carnation_approx !important;
+		border-color: $color_carnation_approx !important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $color_radical_red_approx;
+		border: 2px solid $color_radical_red_approx;
+		&:hover {
+			background: $color_radical_red_approx;
+			color: $white;
+		}
+		&:focus {
+			background: $color_radical_red_approx;
+			color: $white;
+		}
+		&:active {
+			background: $color_radical_red_approx;
+			color: $white;
+		}
+	}
+}
+.btn-success {
+	background: $color_fern_approx;
+	color: $white;
+	border: 2px solid $color_fern_approx;
+	&:hover {
+		background: $color_apple_approx !important;
+		border-color: $color_apple_approx !important;
+	}
+	&:focus {
+		background: $color_apple_approx !important;
+		border-color: $color_apple_approx !important;
+	}
+	&:active {
+		background: $color_apple_approx !important;
+		border-color: $color_apple_approx !important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $color_fern_approx;
+		border: 2px solid $color_fern_approx;
+		&:hover {
+			background: $color_fern_approx;
+			color: $white;
+		}
+		&:focus {
+			background: $color_fern_approx;
+			color: $white;
+		}
+		&:active {
+			background: $color_fern_approx;
+			color: $white;
+		}
+	}
+}
+.btn-info {
+	background: $color_viking_approx;
+	color: $white;
+	border: 2px solid $color_viking_approx;
+	&:hover {
+		background: $color_picton_blue_approx !important;
+		border-color: $color_picton_blue_approx !important;
+	}
+	&:focus {
+		background: $color_picton_blue_approx !important;
+		border-color: $color_picton_blue_approx !important;
+	}
+	&:active {
+		background: $color_picton_blue_approx !important;
+		border-color: $color_picton_blue_approx !important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $color_viking_approx;
+		border: 2px solid $color_viking_approx;
+		&:hover {
+			background: $color_viking_approx;
+			color: $white;
+		}
+		&:focus {
+			background: $color_viking_approx;
+			color: $white;
+		}
+		&:active {
+			background: $color_viking_approx;
+			color: $white;
+		}
+	}
+}
+.btn-warning {
+	background: $color_casablanca_approx;
+	color: $white;
+	border: 2px solid $color_casablanca_approx;
+	&:hover {
+		background: $color_fuel_yellow_approx !important;
+		border-color: $color_fuel_yellow_approx !important;
+	}
+	&:focus {
+		background: $color_fuel_yellow_approx !important;
+		border-color: $color_fuel_yellow_approx !important;
+	}
+	&:active {
+		background: $color_fuel_yellow_approx !important;
+		border-color: $color_fuel_yellow_approx !important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $color_casablanca_approx;
+		border: 2px solid $color_casablanca_approx;
+		&:hover {
+			background: $color_casablanca_approx;
+			color: $white;
+		}
+		&:focus {
+			background: $color_casablanca_approx;
+			color: $white;
+		}
+		&:active {
+			background: $color_casablanca_approx;
+			color: $white;
+		}
+	}
+}
+.btn-danger {
+	background: $color_chestnut_rose_approx;
+	color: $white;
+	border: 2px solid $color_chestnut_rose_approx;
+	&:hover {
+		background: $color_valencia_approx !important;
+		border-color: $color_valencia_approx !important;
+	}
+	&:focus {
+		background: $color_valencia_approx !important;
+		border-color: $color_valencia_approx !important;
+	}
+	&:active {
+		background: $color_valencia_approx !important;
+		border-color: $color_valencia_approx !important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $color_chestnut_rose_approx;
+		border: 2px solid $color_chestnut_rose_approx;
+		&:hover {
+			background: $color_chestnut_rose_approx;
+			color: $white;
+		}
+		&:focus {
+			background: $color_chestnut_rose_approx;
+			color: $white;
+		}
+		&:active {
+			background: $color_chestnut_rose_approx;
+			color: $white;
+		}
+	}
+}
+.btn-outline {
+	background: none;
+	border: 2px solid $gray;
+	font-size: 16px;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: 0.3s;
+	&:hover {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+	}
+	&:focus {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+	}
+	&:active {
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+	}
+}
+.form-control {
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: none;
+	background: transparent;
+	border: 2px solid $black_10;
+	height: 54px;
+	font-size: 18px;
+	font-weight: 300;
+	&:active {
+		outline: none;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+		border-color: $color_radical_red_approx;
+	}
+	&:focus {
+		outline: none;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+		box-shadow: none;
+		border-color: $color_radical_red_approx;
+	}
+}
+// .mb30 {
+// }
+.row-pb-md {
+	padding-bottom: 4em !important;
+}
+.row-pb-sm {
+	padding-bottom: 2em !important;
+}
+.gtco-loader {
+	position: fixed;
+	left: 10px;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: $url_5 center no-repeat $white;
+}
+#gtco-header-subscribe {
+	#email {
+		padding-right: 9em;
+	}
+	button {
+		position: absolute;
+		top: 0;
+		right: 10px;
+		//Instead of the line below you could use @include border-top-left-radius($radius)
+		border-top-left-radius: 0 !important;
+		//Instead of the line below you could use @include border-bottom-left-radius($radius)
+		border-bottom-left-radius: 0 !important;
+	}
+}
+.dropdown_sub {
+	display: none;
+	background: $white;
+	padding: 20px !important;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 4px;
+}
+.menu-1 {
+	margin-top: 28px;
+	position: relative;
+	padding-right: 0;
+	display: inline-block;
+	float: right;
+}
+.Language {
+	display: block;
+	position: absolute;
+	top: -40px;
+	right: 0;
+	li a {
+		padding: 0 !important;
+		font-size: 11px !important;
+	}
+}
+.language-scroll {
+	display: none;
+}
+#sekcija-uvod {
+// 	background: #F5F1ED;
+	padding-top: 60px;
+	h1 {
+		text-align: left;
+		margin-bottom: 25px;
+		color: $color_fuscous_gray_approx;
+		text-align: center;		
+	}
+	h3 {
+		text-align: center;
+		margin-bottom: 25px;
+		color: $color_fuscous_gray_approx;
+		margin-bottom: 40px;
+		position: relative;
+		&:before {
+			content: "";
+			width: 50px;
+			height: 3px;
+			background: #F25F5C;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			bottom: -10px;
+		}
+	}
+}
+#sekcija-o-nama {
+	background: $color_wild_sand_approx;
+	padding-top: 50px;
+	padding-bottom: 40px;
+	h3 {
+		text-align: center;
+		margin-bottom: 53px;
+		color: $color_fuscous_gray_approx;
+		position: relative;
+		&:before {
+			content: "";
+			width: 50px;
+			height: 3px;
+			background: #F25F5C;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			bottom: -10px;
+		}
+	}
+	ul {
+		list-style-type: none;
+		li {
+			display: inline-block;
+			text-align: center;
+			i {
+				font-size: 36px;
+				margin-bottom: 15px;
+				//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+				transition: .4s;
+			}
+			&:hover {
+				i {
+					color: $color_radical_red_approx;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+					transition: .4s;
+// 					cursor: pointer;
+				}
+				h5 {
+					color: $color_radical_red_approx;
+					//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+					transition: .4s;
+// 					cursor: pointer;
+				}
+			}
+		}
+	}
+	.text-part h5 {
+		text-transform: uppercase;
+		font-size: 13px;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .4s;
+		color: $color_storm_dust_approx;
+		font-weight: 700;
+	}
+	i.fa {
+		display: inline-block;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 60px;
+		//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+//  		box-shadow: 1px 0 1px $color_fuscous_gray_approx;
+		padding: 0.5em 0.6em;
+	}
+}
+@keyframes shrink {
+	0% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.05);
+	}
+	50% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1);
+	}
+	100% {
+		//Instead of the line below you could use @include transform($scale, $rotate, $transx, $transy, $skewx, $skewy, $originx, $originy)
+		transform: scale(1.05);
+	}
+}
+
+ /* Sekcija slider */
+#sekcija-slider {
+	padding-top: 50px;
+	padding-bottom: 17px;
+	h1 {
+		text-align: center;
+		color: $color_storm_dust_approx;
+		margin-bottom: 30px;
+	}
+	.crsl-item {
+		h2 {
+			color: $color_storm_dust_approx;
+			font-size: 20px;
+		}
+		a {
+			//color: $black;
+			&:hover {
+				color: $color_storm_dust_approx;
+			}
+		}
+	}
+	.crsl-nav {
+		font-size: 45px;
+		i:hover {
+			color: $color_brick_red_approx;
+		}
+	}
+}
+
+/* Sekcija slider - Novosti */
+
+.sekcija-slider-okvir {
+	position: relative;
+	h3 {
+		text-align: center;
+		margin-bottom: 50px;
+	}
+}
+.next {
+	opacity: .5;
+	position: absolute;
+	right: -10%;
+	top: 15%;
+	i {
+		padding: 4px 20px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 50%;
+		border: 1px solid #f7385900;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .35s;
+	}
+	&:hover i {
+		opacity: 1;
+		border: 1px solid #f7385954;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .35s;
+	}
+}
+.previous {
+	opacity: .5;
+	position: absolute;
+	left: -10%;
+	top: 15%;
+	i {
+		padding: 4px 20px;
+		//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+		border-radius: 50%;
+		border: 1px solid #f7385900;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .35s;
+	}
+	&:hover i {
+		opacity: 1;
+		border: 1px solid #f7385954;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .35s;
+	}
+}
+.tab-group {
+	position: relative;
+	//border: 1px solid $color_gallery_approx;
+	margin-top: 2.5em;
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 0 0 10px 10px;
+	margin-bottom: 100px;
+	
+	section {
+		opacity: 0;
+		height: 0;
+		overflow: hidden;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: opacity 0.4s ease, height 0.4s ease;
+		&.active {
+			opacity: 1;
+			height: auto;
+			//overflow-x: scroll;
+		}
+	}
+}
+.tab-nav {
+	list-style: none;
+	margin: -2.5em -1px 0 0;
+	padding: 0;
+	height: 3.5em;
+	overflow: hidden;
+	li {
+		display: inline;
+		a {
+			top: 1px;
+			position: relative;
+			display: block;
+			float: left;
+			//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+			border-radius: 10px 10px 0 0;
+			background: $color_gallery_approx;
+			line-height: 2em;
+			padding: 0.5em 1em;
+			text-decoration: none;
+			color: $gray;
+			margin-top: .5em;
+			margin-right: 1px;
+			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+			transition: background .2s ease, line-height .2s ease, margin .2s ease;
+		}
+		&.active a {
+			background: $color_radical_red_approx;
+			color: $white;
+			line-height: 2.5em;
+			margin-top: 0;
+		}
+	}
+}
+#gtco-header2 {
+	height: 400px !important;
+	overflow: hidden;
+	margin-bottom: 60px;
+
+	.display-t {
+		height: 400px;
+		margin-top: 50px;
+		h1 {
+			vertical-align: middle;
+			line-height: 400px;
+			color: $white;
+			text-align: left;
+			text-transform: uppercase;
+			position: relative;
+			&:before {
+				content: '';
+				background: #d91d15;
+				height: 4px;
+				width: 45px;
+				position: absolute;
+				bottom: 174px;				
+				line-height: 400px;
+			}
+		}		
+	}
+}
+.cover2 {
+	position: absolute;
+	background-size: cover;
+}
+.gtco-contact-info ul {
+	padding: 0;
+	margin: 0;
+	li {
+		padding: 0 0 0 70px;
+		margin: 0 0 30px 0;
+		list-style: none;
+		position: relative;
+		&:before {
+			color: $color_botticelli_approx;
+			position: absolute;
+			left: 0;
+			top: .05em;
+			font-family: $font_0;
+			// speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+		}
+		&.address:before {
+			font-size: 30px;
+			content: "\e9d1";
+		}
+		&.phone:before {
+			font-size: 23px;
+			content: "\e9f4";
+		}
+		&.email:before {
+			font-size: 23px;
+			content: "\e9da";
+		}
+		&.url:before {
+			font-size: 23px;
+			content: "\e9af";
+		}
+	}
+}
+.js .animate-box {
+	opacity: 0;
+}
+
+
+#highchart_container {
+	display: inline-block;
+	height: 600px !important;
+	margin: 0 !important;
+	width: 730px !important;
+	right: 0;
+	position: relative;
+}
+
+.mapa-srb {	
+	position: relative;
+    top: 55px;
+    width: 350px;
+    vertical-align: top;
+    display: inline-block;
+    margin: 0;
+    margin-right: 45px;
+    
+	.arrow1 {
+			@extend %extend_3;
+			top: 118px;
+			right: 129px;			
+			transform: rotate(-50deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow2 {
+		@extend %extend_3;
+		top: 85px;
+		right: 109px;
+		transform: rotate(127deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow3 {
+		@extend %extend_3;
+		top: 0;
+		left: 96px;		
+		transform: rotate(73deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow4 {		
+		@extend %extend_3;
+		top: 32px;
+		left: 111px;
+		transform: rotate(-114deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow5 {		
+		@extend %extend_3;
+		top: 75px;
+		left: 79px;
+		transform: rotate(155deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow6 {		
+		@extend %extend_3;
+		top: 90px;
+		left: 45px;
+		transform: rotate(-15deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow7 {		
+		@extend %extend_3;
+		top: 181px;
+		left: 92px;
+		transform: rotate(170deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow8 {		
+		@extend %extend_3;
+		top: 198px;
+		left: 53px;
+		transform: rotate(-25deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow9 {		
+		@extend %extend_3;
+		top: 310px;
+		left: 92px;
+		transform: rotate(-54deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow10 {		
+		@extend %extend_3;
+		top: 282px;
+		left: 110px;
+		transform: rotate(130deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow11 {		
+		@extend %extend_3;
+		top: 395px;
+		left: 140px;
+		transform: rotate(-55deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow12 {		
+		@extend %extend_3;
+		top: 362px;
+		left: 160px;
+		transform: rotate(130deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow13 {		
+		@extend %extend_3;
+		bottom: 28px;
+		right: 61px;
+		transform: rotate(-90deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow14 {		
+		@extend %extend_3;
+		bottom: 67px;
+		right: 67px;
+		transform: rotate(90deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow15 {		
+		@extend %extend_3;
+		bottom: 140px;
+		right: 38px;
+		transform: rotate(-35deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	.arrow16 {		
+		@extend %extend_3;
+		bottom: 166px;
+		right: 10px;
+		transform: rotate(140deg);
+		&:hover {
+			@extend %extend_4;
+		}
+	}
+	img {
+	width: 100%;
+	}
+	span {
+		transition: .3s ease;
+	}
+}
+
+/* klasa za grafik na stranici progdanunapredpotrosja.php */
+#highchart_container2 {
+	max-width: 1000px !important;	
+
+	.highcharts-container {
+		
+	}
+}
+
+/* Klasa koja se dodeljuje strelici koja prikazuje smer prenosa */
+.clickedDirection {
+	color: $color_radical_red_approx;
+}
+
+
+/* Strelica nadole za scroll na naslovnoj strani */
+
+.arrow-wrapper {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 8%;
+    left: 0;
+    right: 0;
+    a {
+      transform: rotate(90deg);
+	  bottom: 25px;
+	  color: #fff;
+	  height: 45px;
+	  line-height: 45px;
+	  position: absolute;
+	  width: 100%;
+	  padding: 0 0 0 20px;
+	  font-size: 12px;
+	  font-weight:700;
+	  font-family: 'Arial';
+	  -webkit-box-sizing: border-box;
+	  -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	  text-transform: uppercase;
+	  transition:0.4s all ease-in;
+	  span{
+		  display: block;
+		  width: 8px;
+		  top: 0;
+		  bottom: 0;
+		  margin: auto;
+		  right: 10px;
+		  height: 10px;
+		  position: absolute;
+		  &:before {
+		  	  content:"";
+			  background: url("../images/arrow_3.png");
+			  display: block;
+			  width: 8px;
+			  top: 0;
+			  bottom: 0;
+			  margin: auto;
+			  right: 10px;
+			  height: 10px;
+			  position: absolute;
+			  opacity: 0.5;
+		  }
+		  &:after {
+			  content:"";
+			  background: url("../images/arrow_3.png");
+			  display: block;
+			  width: 8px;
+			  top: 0;
+			  bottom: 0;
+			  margin: auto;
+			  right: 20px;
+			  height: 10px;
+			  position: absolute;
+			  opacity: 0.3;
+		  }
+		  span{
+			  background: url("../images/arrow_3.png");
+			  display: block;
+			  width: 8px;
+			  top: 0;
+			  bottom: 0;
+			  margin: auto;
+			  right: 0px;
+			  height: 10px;
+			  opacity: 1;
+			  position: absolute;
+		  }
+	  }
+	  &:hover .arrow:before{
+		  animation: animate-arrow-2 1.5s ease-in-out  0.1s;
+      }
+      &:hover .arrow:after{
+		  animation: animate-arrow-3 1.5s ease-in-out  0.2s;
+	  }
+	  &:hover .arrow span{
+		  animation: animate-arrow-1 1.5s ease-in-out ;
+	  }
+	}
+}
+
+@keyframes animate-arrow-1 {
+  0%{transform:translateX(-40px);opacity: 0;}
+  70%,100%{transform:translateX(0px);opacity: 1;}
+}
+@keyframes animate-arrow-2 {
+  0%{transform:translateX(-20px);opacity: 0;}
+  70%,100%{transform:translateX(0px);opacity: 0.5;}
+}
+@keyframes animate-arrow-3 {
+  0%{transform:translateX(-10px);opacity: 0;}
+  70%,100%{transform:translateX(0px);opacity: 0.3;}
+}
+
+
+/* Sekcija Accordion */
+@import url(https://fonts.googleapis.com/css?family=Raleway:300);
+
+@function random-color($min: 0, $max: 255, $alpha: 1) {
+	@if $min < 0 {
+		$min: -1;
+	} @else {
+		$min: $min - 1;
+	}
+	@if $max > 255 {
+		$max: 256;
+	} @else {
+		$max: $max + 1;
+	}
+	$red: random($max) + $min;
+	$green: random($max) + $min;
+	$blue: random($max) + $min;
+	@return rgba($red, $green, $blue, $alpha);
+}
+
+$ultralight: #fefefe;
+$primary: random-color($min: 100, $max: 100);
+$primary-light: mix(#ffffff, $primary, 25%);
+$primary-dark: mix(#000000, $primary, 25%);
+
+// *,
+// *:before,
+// *:after {
+//     box-sizing: border-box;    
+// }
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+// html {
+//     padding-top: 50px;
+//     font-family: 'Raleway', Helvetica, arial, sans-serif;
+//     background-color: #eeeeee;
+// }
+
+#sekcija-accordion {
+	background: #f5f5f5;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	h3 {
+		text-align: center;	
+		position: relative;
+		&:before {
+			content: "";
+			width: 60px;
+			height: 3px;
+			background: #F25F5C;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			bottom: -10px;
+		}
+	}
+}
+
+.accordion {
+    width: 100%;
+    //max-width: 95rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.accordion-item {
+    position: relative;
+
+    &.active {
+        .heading {
+            color: #9a9a9a;
+        }
+
+        .icon {
+            background: $ultralight;
+
+            &:before {
+                background: #9a9a9a;
+            }
+
+            &:after {
+                width: 0;
+            }
+        }
+    }
+
+    h3 {
+    	text-align: center;
+    	font-size: 40px;
+    }
+    
+    .heading {
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #332a2a;
+        font-weight: 700;
+        font-size: 1rem;
+        position: relative;
+        padding: 1.5rem 1.5rem 1.5rem 4rem;
+        transition: 0.3s ease-in-out;
+
+        @media (min-width: 40rem) {
+            font-size: 1.2rem;
+        }
+
+        &:hover {
+            color: #9a9a9a;
+            
+            .icon {
+                &:before,
+                &:after {
+                	background: #9a9a9a;
+                }
+            }
+        }
+    }
+
+    .icon {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 3rem;
+        height: 3rem;
+        border: 2px solid $ultralight;
+        border-radius: 3px;
+        transform: translateY(-50%);
+
+        &:before,
+        &:after {
+            content: '';
+            width: 1.25rem;
+            height: 0.25rem;
+            background: #5d5d5d;
+            position: absolute;
+            border-radius: 3px;
+            left: 50%;
+            top: 50%;
+            transition: 0.3s ease-in-out;
+            transform: translate(-50%, -50%);
+        }
+
+        &:after {
+            transform: translate(-50%, -50%)
+                       rotate(90deg);
+            z-index: -1;
+        }
+    }
+
+    .content {
+    	position: relative;
+        display: none;
+        
+        .text {
+        	display: inline-block;
+        	width: 60%;
+        }
+
+        p {
+            margin-top: 0;
+        }
+        
+        @media (min-width: 40rem) {
+            // padding-left: 4rem;
+            line-height: 1.75;
+        }
+
+        img {
+        	display: inline-block;
+        	width: 38%;
+        	vertical-align: top;
+        }
+    }
+}
+
+/* Prekogranicni plan rada */
+#prekogranicni-plan-rada {
+	h1 {
+		text-align: center;
+		margin-bottom: 65px;
+		color: $color_fuscous_gray_approx;
+	}
+
+	label {
+		display: block;
+	}
+
+	.datepicker {
+		margin-bottom: 20px;
+	}
+}
+
+/* iframe */
+.menu {
+	#date{
+		width: 120px;	
+		margin-right: 20px;
+	}
+	
+}
+
+.MenuOppener {
+	position: absolute;
+	top: 30px;	
+	right: 30px;
+	font-size: 26px;
+	display: none;
+	cursor: pointer;
+	color: #fdfdfe;
+}
+
+/* RESPONSIVE */
+@media (min-width: 1200px) {
+	.my_container .container {
+		width: 85% !important;
+	}
+	#gtco-header2 .container {
+		width: 85% !important
+	}
+}
+
+@media (max-width: 1200px) {
+	.MenuOppener {
+		display: block;
+	}
+	.MenuContainer {
+		background: #fefeff;	
+	}
+
+}

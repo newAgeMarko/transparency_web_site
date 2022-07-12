@@ -1,0 +1,408 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Konzum</title>
+	<link rel="stylesheet" href="./css/style.css" type="text/css">
+	<link rel="stylesheet" href="./css/loader.css" type="text/css">
+	<link rel="stylesheet" href="./css/menu.css" type="text/css">
+	<link rel="stylesheet" href="./css/material-icons.css" type="text/css">
+
+	<script type="text/javascript" src="./js/jquery-1.11.1.min.js"></script> 
+	<script type="text/javascript" src="./js/highcharts.js"></script>
+	<script type="text/javascript" src="./js/menu.js"></script>
+
+		
+	<script>
+	
+		var c_lbl = ["Учитај податке", "Увећање 1:1", "Прикажи Min/Max", "Прикажи информације", "Затвори прозор", "Потрошња у ЕЕС Србије на дан ", "ДНЕВНИ МИНИМУМ", "ДНЕВНИ МАКСИМУМ", "ТРЕНУТНА ВРЕДНОСТ" ,"Ажурирано у: ", "Сакриј Min/Max", "Сакриј информације"];
+		var l_lbl = ["Učitaj podatke", "Uvećanje 1:1", "Prikaži Min/Max", "Prikaži informacije", "Zatvori prozor", "Potrošnja u EES Srbije na dan ", "DNEVNI MINIMUM", "DNEVNI MAKSIMUM", "TRENUTNA VREDNOST", "Ažurirano u: ", "Sakrij Min/Max", "Sakrij informacije"];
+		var e_lbl = ["Reload data", "Reset zoom 1:1", "Show Min/Max", "Show info", "Close window","Load of Serbian Power System for ", "DAILY MINIMUM", "DAILY MAXIMUM", "ACTUAL VALUE", "Last update: ", "Hide Min/Max", "Hide info"];
+	
+		var txt_lbl,
+			options,
+			chart,
+			minX = 0,
+			maxX = 86400000,
+			isLoading = false,
+			isLoaded = false,
+			isExtremes = false,
+			isInfo = false,
+			dayMax = 0,
+			dayMin = 0,
+			timeMax = "",
+			timeMin = "";
+			
+function init() {
+
+ 	var params = {};
+
+	var query = window.location.search.substring(1).split("&");
+	for (var i = 0, max = query.length; i < max; i++)
+	{
+		if (query[i] === "") continue;
+		var param = query[i].split("=");
+		params[decodeURIComponent(param[0])] = decodeURIComponent(param[1] || "");
+	}
+
+    lng = (params.lng == null) ? "c" : params.lng;
+	txt_lbl = window[lng + "_lbl"];
+	$('.lbl').each(function (index) {
+		this.textContent = txt_lbl[index];
+	});
+}	
+	
+		function requestData() {
+			$.ajax({
+				url: './json/json_single.php?data=KONZUM', 
+				success: function(point) {
+					var diff = point[0] - maxX; 
+					if (diff > 0 && diff < 20000) {
+						minX = minX + 20000;
+						maxX = maxX + 20000;
+						chart.xAxis[0].setExtremes(minX,maxX);
+					}
+					chart.series[0].addPoint(eval(point), true, false);
+					ShowMinMax(chart);
+					$("#ctime").html(formattedTime(point[0]));
+					$("#lastTime").html(formattedTime(point[0]));
+					$("#lastValue").html(point[1]);
+					updateStat(point[0], point[1]);
+					setTimeout(requestData, 10000);	
+				},
+				cache: false
+			});
+		}
+		
+		function toggleLoading() {
+		   isLoading = !isLoading;
+		   if (isLoading) $("#container").html( "<div class='highcharts-loading'><div class='highcharts-loading-inner'></div></div>" );
+		   else $("#container").html("");
+		}
+
+$(window).load(init);
+		
+$(document).ready(function() {
+	$(".key-stats").hide();
+	options = {
+        chart: {
+            renderTo: 'container',
+			marginTop: 24,
+            type: 'spline',
+			zoomType: 'x',
+			resetZoomButton: {
+				theme: {
+					style: {
+ 							display: 'none'
+                    }
+				}
+            },
+		panning: true,
+        panKey: 'shift',
+		events: {
+			load: requestData
+				}
+        },
+		title: {
+			text: null
+		},
+		credits: {
+			enabled: false
+			},
+        tooltip: {
+			formatter: function () {
+				return formattedTime(this.x) + '<br><b>' + this.y + ' MW</b>';
+				},
+			crosshairs: true
+		},
+		xAxis: {
+                type: 'datetime',
+				dateTimeLabelFormats: { //force all formats to be hour:minute:second
+                    second: '%H:%M:%S',
+                    minute: '%H:%M:%S',
+                    hour: '%H:%M:%S',
+                    day: '%H:%M:%S',
+                    week: '%H:%M:%S',
+                    month: '%H:%M:%S',
+                    year: '%H:%M:%S'
+                },
+				min: minX,
+				max: maxX,
+				minPadding: 0.05,
+				maxPadding: 0.05,
+				events: {
+					setExtremes: function(event) {
+						if(event.max != null) {
+							minX = event.min;
+							maxX = event.max;
+						}
+						else {
+							minX = 0;
+							maxX = 86400000;
+						}
+					},
+					afterSetExtremes: function(event) {
+						ShowMinMax(event.target.chart);
+					}				
+				}
+		},
+		yAxis: {
+				minPadding: 0.2,
+				maxPadding: 0.2,
+				title: {
+						text: 'MW'
+				},
+				labels: {
+						formatter: function () {
+						return this.value;
+						}
+				}
+		},
+		plotOptions: {
+                series: {
+                    marker: {
+                        enabled: false
+                    }
+                }
+        },
+        series: [{ showInLegend: false }]
+    };
+    
+});
+
+function LoadData() {
+
+	toggleLoading();
+	$.get("./json/cdate.php", function(data) {
+		$("#cdate").html(data);
+	});
+	var url =  "https://transparency.ems.rs/realtime_web/json_all.php?data=KONZUM&callback=?";
+    $.getJSON(url,  function(data) {
+        options.series[0].data = data;
+        toggleLoading();
+        chart = new Highcharts.Chart(options);
+		dayMax = chart.series[0].dataMax;
+		dayMin = chart.series[0].dataMin;
+		timeMax = formattedTime(chart.series[0].points[chart.series[0].processedYData.indexOf(dayMax)].x);
+		timeMin = formattedTime(chart.series[0].points[chart.series[0].processedYData.indexOf(dayMin)].x);
+		$("#dayMax").html(dayMax);
+		$("#dayMin").html(dayMin);
+		$("#timeMax").html(timeMax);
+		$("#timeMin").html(timeMin);
+    });
+    isLoaded = true;
+}
+
+function ShowMinMax(c) {
+
+	c.yAxis[0].removePlotLine('lineMin');
+	c.yAxis[0].removePlotLine('lineMax');
+	if (isExtremes) { 
+        var series = c.series[0],
+        minY = series.dataMin,
+        maxY = series.dataMax;
+		c.yAxis[0].addPlotLine({
+            value: minY,
+            width: 2,
+            color: 'green',
+            id: 'lineMin',
+			zIndex: 2,
+			label: {
+                text: 'Min: ' + minY + " MW",
+                align: 'right',
+				style: {
+                color: 'green'
+				},
+                y: 18,
+                x: 0
+            }
+        });
+		c.yAxis[0].addPlotLine({
+            value: maxY,
+            width: 2,
+            color: 'red',
+            id: 'lineMax',
+			zIndex: 2,
+			label: {
+                text: 'Max: ' + maxY + " MW",
+                align: 'right',
+				style: {
+                color: 'red'
+				},
+                y: -10,
+                x: 0
+            }
+        });		
+	}
+}
+
+function updateStat(time, value){
+
+    if (dayMax < value) {
+	    dayMax = value;
+		$("#dayMax").html(value);
+		timeMax = formattedTime(time);
+		$("#timeMax").html(timeMax);
+	} 
+    if (dayMin > value) {
+	    dayMIn = value;
+		$("#dayMin").html(value);
+		timeMin = formattedTime(time);
+		$("#timeMin").html(timeMin);
+	} 
+}
+
+function formattedTime(date) {
+
+	var date = new Date(date);
+	var hours = "0" + (date.getHours() - 1);
+	var minutes = "0" + date.getMinutes();
+	var seconds = "0" + date.getSeconds();
+	return hours.substr(-2) + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+}
+
+</script>
+</head>
+
+<body>
+<section class="v-center">
+</div>
+    <br/>
+    <a class="js-open-modal btn" href="#" data-modal-id="popup">Konzum</a></div>
+</section>
+
+<div id="popup" class="modal-box">
+  <header> 
+  <div class="toggle-menu" id="menu">
+    <i class="material-icons">menu</i>
+  </div>
+  <ul
+    class="menu"
+    data-menu
+    data-menu-toggle="#menu"
+  >
+    <li>
+      <div id="refresh" class="menu-item"><i class="material-icons">refresh</i><span class='icon-text lbl'></span></div>
+    </li>
+    <li class="menu-separator"></li>
+    <li>
+      <div id="reset_zoom" class="menu-item"><i class="material-icons">zoom_out</i><span class='icon-text lbl'></span></div>
+    </li>
+    <li>
+      <div id="show_extremes" class="menu-item"><i class="material-icons">import_export</i><span class='icon-text lbl'></span></div>
+    </li>
+    <li>
+      <div id="show_info" class="menu-item"><i class="material-icons">info_outline</i><span class='icon-text lbl'></span></div>
+    </li>
+    <li class="menu-separator"></li>
+    <li>
+      <div id="close" class="menu-item"><i class="material-icons">close</i><span class='icon-text lbl'></span></div>
+    </li>
+  </ul>
+  <h3><span class='lbl'></span><span id="cdate"></span></h3>
+  </header>
+  <div class="modal-body">
+	<div id="container" style="width: 720px; height: 360px; margin: 0 auto"></div>
+	<div class="key-stats">
+		<div class="key-stats-container">
+			<div class="stat-box col-3">
+				<label><span class='lbl'></span></label>
+				<p style="color:green"><span id="dayMin"></span> MW</p>
+				<p style="font-size:0.7em;color:#999"><i class="material-icons small-icon">access_time</i><span id="timeMin"></span></p>
+			</div>
+			<div class="stat-box col-3">
+				<label><span class='lbl'></span></label>
+				<p style="color:red"><span id="dayMax"></span> MW</p>
+				<p style="font-size:0.7em;color:#999"><i class="material-icons small-icon">access_time</i><span id="timeMax"></span></p>
+			</div>
+			<div class="stat-box col-3">
+				<label><span class='lbl'></span></label>
+				<p style="color:#70A3D3"><span id="lastValue"></span> MW</p>
+				<p style="font-size:0.7em;color:#999;"><i class="material-icons small-icon">access_time</i><span id="lastTime"></span></p>
+			</div>
+		</div>
+	</div>
+    <h4><span class='lbl'></span><span id="ctime"></span></h4>
+  </div>
+</div>
+
+<script>
+
+$(function(){
+
+var appendthis =  ("<div class='modal-overlay js-modal-close'></div>");
+
+	$('a[data-modal-id]').click(function(e) {
+		e.preventDefault();
+    $("body").append(appendthis);
+    $(".modal-overlay").fadeTo(500, 0.7);
+    //$(".js-modalbox").fadeIn(500);
+		var modalBox = $(this).attr('data-modal-id');
+		$('#'+modalBox).fadeIn($(this).data());
+ if (!isLoaded) LoadData();
+
+		});  
+  
+$("#close, .modal-overlay").click(function() {
+    $(".modal-box, .modal-overlay").fadeOut(500, function() {
+        $(".modal-overlay").remove();
+    });
+});
+ 
+$(window).resize(function() {
+    $(".modal-box").css({
+        top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+        left: ($(window).width() - $(".modal-box").outerWidth()) / 2
+    });
+});
+ 
+$(window).resize();
+ 
+});
+  	
+
+$('#container').on('mousedown', function(e) {
+    $('#container').on('mousemove', function(evt) {
+        $('#container').css('cursor', 'zoom-in');	
+	});
+});
+
+$('#container').on('mouseup', function() {
+    $('#container').off('mousemove');
+	$('#container').css('cursor', 'default');
+});
+	
+		$('[data-menu]').menu();
+    	$('#refresh').click(function(e) {
+			minX = 0;
+			maxX = 86400000;
+			LoadData();		
+			$('#menu').trigger("click");			
+		});
+    	$('#reset_zoom').click(function(e) {
+			chart.xAxis[0].setExtremes(0,86400000);		
+			$('#menu').trigger("click");			
+		});
+    	$('#show_extremes').click(function(e) { 
+			isExtremes = !isExtremes;
+		    var txt = isExtremes ? txt_lbl[10] : txt_lbl[2];
+			$("#show_extremes span").text(txt);
+			ShowMinMax(chart);
+			$('#menu').trigger("click");			
+		});
+    	$('#show_info').click(function(e) { 
+			isInfo = !isInfo;
+		    var txt = isInfo ? txt_lbl[11] : txt_lbl[3];
+			$("#show_info span").text(txt);
+			isInfo ? $(".key-stats").show() : $(".key-stats").hide();
+			isInfo ? $("h4").hide() : $("h4").show();
+			$('#menu').trigger("click");			
+		});
+    	$('#close').click(function(e) {  
+			$('#menu').trigger("click");			
+		});
+	</script>
+</body>
+</html>

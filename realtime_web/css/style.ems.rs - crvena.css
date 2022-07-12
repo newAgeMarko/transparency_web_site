@@ -1,0 +1,276 @@
+
+.mapa {
+	width: 800px;
+	height: 800px;
+	background-image: url('./Srbija800x800.png');
+}
+.preload_gif {
+	position: absolute;
+	z-index: 1000;
+	background-image: url('./processing.gif');
+	width: 64px;
+	height: 64px;
+ 	left: 380px;
+	top: 360px;   
+}
+
+.preload {
+	position: absolute;
+	z-index: 1000;
+ 	left: 360px;
+	top: 340px;   
+	border: 16px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 16px solid #999999;
+	width: 64px;
+	height: 64px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% { -webkit-transform: rotate(0deg); }
+	100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.granica {
+	position: absolute;
+}
+
+.strelica {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	z-index: 1000;
+	opacity: 0.85;
+}
+
+.labela {
+	pointer-events: none;
+	position: absolute;
+	width: 120px;
+	background: #ffffff;
+	border: 1px solid #ee1d27;
+	z-index: 1000;
+/*  -moz-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.8);
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.8);
+*/
+}
+
+.dole {
+	margin-left: -3px;
+	margin-top: 66px;
+}
+
+.dole:before {
+	position: absolute;
+	content: ' ';
+	left: 17px;
+	top: -9px;
+	width: 16px;
+	height: 16px;
+	border-top: 1px solid #ee1d27;
+	border-right: 1px solid #ee1d27;
+	background: #ee1d27;
+	transform: rotate(-45deg);
+}	
+
+.desno {
+	margin-left: 66px;
+	margin-top: 6px;
+}
+
+.desno:before {
+	position: absolute;
+	content: ' ';
+	left: -9px;
+	top: 9px;
+	width: 16px;
+	height: 16px;
+	border-top: 1px solid #ee1d27;
+	border-right: 1px solid #ee1d27;
+	background: #ee1d27;
+	transform: rotate(-45deg);
+}	
+
+.levo {
+	margin-left: -138px;
+	margin-top: 6px;
+}
+
+.levo:before {
+	position: absolute;
+	content: ' ';
+	left: 111px;
+	top: 9px;
+	width: 16px;
+	height: 16px;
+	border-top: 1px solid #ee1d27;
+	border-right: 1px solid #ee1d27;
+	background: #ee1d27;
+	transform: rotate(-45deg);
+}	
+
+.gore {
+	margin-left: -3px;
+	margin-top: -96px;
+}
+
+.gore:before {
+	position: absolute;
+	content: ' ';
+	left: 17px;
+	bottom: -9px;
+	width: 16px;
+	height: 16px;
+	border-top: 1px solid #ee1d27;
+	border-right: 1px solid #ee1d27;
+	background: #ffffff;
+	transform: rotate(135deg);
+}	
+
+.podatak {
+	padding: 10px 20px;
+	overflow: hidden;
+}
+.drzava {
+	background: #ee1d27;
+	color: #FFFFFF;
+	font: bold 12px Arial;
+}	
+.razmena {
+	position: relative;
+	float: right;
+	color: #000000;
+	font: bold 18px Arial;
+}
+
+.vreme {
+	position: absolute;
+	left: 20px;
+	top: 742px;
+	float: left;
+	color: #000000;
+	font: bold 12px Arial;
+}
+
+.regulacija {
+	left: 460px;
+	top: 80px;
+    width: 370px; 
+}
+
+.naziv {
+	background: #ee1d27;
+	color: #FFFFFF;
+	font: bold 14px Arial;
+	line-height: 18px;
+    width: 212px; 
+	display: inline-block;
+    float: left;
+}
+
+.cw {
+    width: 78px;
+	display: inline-block;
+	text-align: right;
+	line-height: 18px;
+}	
+
+.btop {
+	border-top: 1px solid #ee1d27;
+}
+
+.HU {
+	left: 265px;
+	top: 125px;
+}
+
+.RO {
+	left: 420px;
+	top: 225px;
+}
+
+.BG {
+	left: 560px;
+	top: 480px;
+}
+
+.MK {
+	left: 440px;
+	top: 610px;
+}
+
+.AL {
+	left: 335px;
+	top: 600px;
+}
+
+.CG {
+	left: 275px;
+	top: 485px;
+}
+
+.BH {
+	left: 235px;
+	top: 345px;
+}
+
+.HR {
+	left: 225px;
+	top: 215px;
+}
+
+#HU_strelica {
+	-ms-transform: rotate(260deg); 
+    -webkit-transform: rotate(260deg); 
+    transform: rotate(260deg);
+}
+
+#RO_strelica {
+    -ms-transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+    transform: rotate(-25deg);
+}
+
+#BG_strelica {
+	-ms-transform: rotate(10deg);
+    -webkit-transform: rotate(10deg);
+    transform: rotate(10deg);
+}
+
+#MK_strelica {
+    -ms-transform: rotate(70deg); 
+    -webkit-transform: rotate(70deg);
+    transform: rotate(70deg);
+}
+
+#AL_strelica {
+    -ms-transform: rotate(140deg); 
+    -webkit-transform: rotate(140deg); 
+    transform: rotate(140deg);
+}
+
+#CG_strelica {
+    -ms-transform: rotate(145deg); 
+    -webkit-transform: rotate(145deg); 
+    transform: rotate(145deg);
+}
+
+#BH_strelica {
+    -ms-transform: rotate(170deg); 
+    -webkit-transform: rotate(170deg); 
+    transform: rotate(170deg);
+}
+
+#HR_strelica {
+    -ms-transform: rotate(180deg); 
+    -webkit-transform: rotate(180deg); 
+    transform: rotate(180deg);
+}

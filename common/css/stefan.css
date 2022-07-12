@@ -1,0 +1,191 @@
+.c-layout-header {
+    background: #fff !important;
+}
+.c-active > a:first-child{
+    color: #428de4 !important;
+}
+.c-mega-menu li a:hover {
+    color: #F25F5C !important;
+}
+.c-menu-type-classica a {
+    color: #F25F5C !important;
+}
+
+.activeLink > a:before{
+    content: "";
+    bottom: 9px;
+    position: absolute;
+    background: #F25F5C;
+    color: #F25F5C;
+    width: 50px;
+    height: 2px;
+}
+.Jezici li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+@-moz-document url-prefix() {
+    .Jezici li {padding-top:0;}
+    .Jezici {padding-top: 9px;}
+}
+
+
+.Jezici li a {
+    color: #6e717b;
+}
+.Jezici li:first-child a {
+    border-right: 1px solid #c3c1c1;
+    padding-right: 6px;
+}
+#gtco-footer a:before {
+    content: none;
+}
+
+.c-brand > span {
+    display: block;
+    margin-top: 20px;
+    margin-left: 6px;
+    font-size: 12px;
+    color: #F25F5C;
+}
+
+.c-brand div {
+    display: inline-block;
+}
+.c-brand div > span {
+    display: block;
+    margin-top: 26px;
+    font-size: 12px;
+    color: #d81f16;
+    margin-left: 4px;
+}
+.c-brand img {
+    vertical-align: top;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid #bfbfbd;
+}
+
+@media(max-width: 1200px) {
+    .c-brand div > span {
+        margin-top: -8px;
+        font-size: 11px;
+    }
+    .c-brand img {
+        vertical-align: top;
+        margin-top: 2px;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .c-layout-header .c-navbar .container {
+        width: 85%;
+    }
+}
+@media (max-width: 1200px) {
+    .Jezici {
+        padding-left: 15px;
+    }
+	.Jezici li a{        
+        color: #3f444a;
+    }
+    .Jezici li i {
+        color: #3f444a;
+    }
+    .c-logo {
+        font-size: 17px !important;
+    }
+    .c-brand > span {
+        display: none !important;
+    }
+}
+@media(max-width: 1000px) {
+    #grafik {
+        overflow: auto;
+    }
+    .accordion-item .content img {
+        display: block;
+    }
+    .accordion-item .content .text {
+        width: 95%;
+    }
+}
+
+@media(max-width: 600px) {
+    #gtco-header .display-tc h1 {
+        font-size: 36px;
+    }
+}
+
+@media (min-width:1200px) and (max-width:1900px) {
+    .c-logo {
+    vertical-align: top;
+    }
+    .c-brand div > span {
+        margin-top: -13px;
+    }
+    .c-brand div {
+    margin-top: -9px;
+    }
+}
+
+
+/* logo */
+.c-logo {
+    font-size: 27px;
+    vertical-align: text-bottom;
+}
+.c-logo span {
+    color: #d81b12;
+}
+.c-logo:before {
+    content: none !important;
+}
+c-logo a:hover, c-logo a:focus, c-logo a:active {
+    color: #F25F5C !important;
+}
+
+
+/* RADIO BUTTON - DOWNLOAD DEO */
+.custom-radio {
+    margin-top: 10px;
+    margin-bottom: 18px;
+    color: #6e717b;
+    display: inline-block;
+}
+.custom-radio:first-child {
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+.custom-radio label{
+    cursor: pointer;
+}
+
+
+#linkEMS {
+    color: #d9271c;
+}
+
+a {
+    cursor: pointer;
+}
+
+#contact-mail {
+    margin-bottom: 45px;
+}
+
+#gtco-footer {
+    padding: 5em 0;
+}
+#gtco-footer:after {
+    top: 180px;
+}
+
+#contact-mail a:hover {
+    transition: .2s ease;
+}

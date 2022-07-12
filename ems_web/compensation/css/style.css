@@ -1,0 +1,18 @@
+html, body {
+    font-size: 90%;
+    font-family: Arial;
+    letter-spacing: 0.2px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 110%;
+	font-weight: normal;
+	color: #ee1d27;
+	margin-top: 0;
+}
+
+#results thead, #results th {
+	text-align: center;
+	padding: 16px 4px 8px 4px;
+}

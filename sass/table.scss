@@ -1,0 +1,88 @@
+//colors
+$black_26: rgba(0, 0, 0, 0.26);
+$background-color-th-td: #c5c3c48c;
+$color_fuscous_gray_approx: #525354;
+$color_concord_approx: #7d7d7d;
+$white: #fff;
+$color_radical_red_approx: #D76F72;
+
+//@extend-elements
+//original selectors
+//.DesnaTabela th, td
+%extend_1 {
+	padding: 6px 9px;
+	background-color: $background-color-th-td;
+	color: $color_fuscous_gray_approx;
+	border: 1px solid #7d7d7d00;
+	//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+	transition: .1s ease;
+	font-size: 13px;
+}
+
+#dvTable {
+	position: relative;	
+	overflow-x: scroll;
+}
+.DesnaTabela {
+	border-collapse: separate;
+	overflow: hidden;
+	//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+	box-shadow: 0 0 20px $black_26;
+
+	tr:first-child {
+		background-color: #c5c3c48c;
+	}
+
+	th {
+		border: 1px solid #7d7d7d00;
+		@extend %extend_1;
+		text-align: left;
+		color: $white;
+		text-transform: none;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	tbody {
+		td {
+			@extend %extend_1;
+			border: 1px solid #7d7d7d00;
+			position: relative;
+			
+			&:hover:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: $background-color-th-td;
+				z-index: -1;
+			}
+		}
+		tr:hover {
+			background-color: $background-color-th-td;
+		}
+	}
+
+	td:hover {
+		//border: 1px solid $color_concord_approx;
+		border: 1px solid $color_radical_red_approx;
+		//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
+		transition: .1s ease;
+	}
+
+	thead th {
+		background-color: $color_fuscous_gray_approx;
+	}
+
+	td:nth-child(1),td:nth-child(2) {
+		color: white;
+		border: 1px solid transparent;
+		background-color: #c5c3c48c;
+	}
+
+	td:nth-child(1):hover:before,td:nth-child(2):hover:before {
+		content: none;
+	}
+}

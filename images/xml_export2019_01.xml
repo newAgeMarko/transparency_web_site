@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<MonthlyAuctionResults-AllocatedCapacity>
+	<Year v="2019" />
+	<Month v="01" />
+	<Direction>
+		<Direction v="ALRS1" />
+		<MeasurementUnit v="MW" />
+		<ATC v="125" />
+		<period_from v="2019-01-01" />
+		<period_to v="2019-01-31" />
+		<TotalRequestedCapacity v="258" />
+		<TotalAllocatedCapacity v="124" />
+		<NumberOfAuctionParticipants v="7" />
+		<NumberOfAuctionParticipantsWithNonZeroAllocatedCapacity v="7" />
+		<NumberOfBids v="30" />
+		<MarginalPrice v="0.25" />
+		<Congestion v="1" />
+	</Direction>
+	<Direction>
+		<Direction v="BARS1" />
+		<MeasurementUnit v="MW" />
+		<ATC v="501" />
+		<period_from v="2019-01-01" />
+		<period_to v="2019-01-31" />
+		<TotalRequestedCapacity v="693" />
+		<TotalAllocatedCapacity v="501" />
+		<NumberOfAuctionParticipants v="11" />
+		<NumberOfAuctionParticipantsWithNonZeroAllocatedCapacity v="10" />
+		<NumberOfBids v="44" />
+		<MarginalPrice v="0.08" />
+		<Congestion v="1" />
+	</Direction>
+	<Direction>
+		<Direction v="MERS1" />
+		<MeasurementUnit v="MW" />
+		<ATC v="250" />
+		<period_from v="2019-01-01" />
+		<period_to v="2019-01-31" />
+		<TotalRequestedCapacity v="451" />
+		<TotalAllocatedCapacity v="249" />
+		<NumberOfAuctionParticipants v="12" />
+		<NumberOfAuctionParticipantsWithNonZeroAllocatedCapacity v="7" />
+		<NumberOfBids v="41" />
+		<MarginalPrice v="0.16" />
+		<Congestion v="1" />
+	</Direction>
+	<Direction>
+		<Direction v="RSAL1" />
+		<MeasurementUnit v="MW" />
+		<ATC v="125" />
+		<period_from v="2019-01-01" />
+		<period_to v="2019-01-31" />
+		<TotalRequestedCapacity v="250" />
+		<TotalAllocatedCapacity v="125" />
+		<NumberOfAuctionParticipants v="9" />
+		<NumberOfAuctionParticipantsWithNonZeroAllocatedCapacity v="4" />
+		<NumberOfBids v="34" />
+		<MarginalPrice v="1.13" />
+		<Congestion v="1" />
+	</Direction>
+	<Direction>
+		<Direction v="RSBA1" />
+		<MeasurementUnit v="MW" />
+		<ATC v="501" />
+		<period_from v="2019-01-01" />
+		<period_to v="2019-01-31" />
+		<TotalRequestedCapacity v="522" />
+		<TotalAllocatedCapacity v="499" />
+		<NumberOfAuctionParticipants v="8" />
+		<NumberOfAuctionParticipantsWithNonZeroAllocatedCapacity v="8" />
+		<NumberOfBids v="31" />
+		<MarginalPrice v="0.01" />
+		<Congestion v="1" />
+	</Direction>
+	<Direction>
+		<Direction v="RSME1" />
+		<MeasurementUnit v="MW" />
+		<ATC v="250" />
+		<period_from v="2019-01-01" />
+		<period_to v="2019-01-31" />
+		<TotalRequestedCapacity v="436" />
+		<TotalAllocatedCapacity v="250" />
+		<NumberOfAuctionParticipants v="13" />
+		<NumberOfAuctionParticipantsWithNonZeroAllocatedCapacity v="7" />
+		<NumberOfBids v="36" />
+		<MarginalPrice v="0.17" />
+		<Congestion v="1" />
+	</Direction>
+</MonthlyAuctionResults-AllocatedCapacity>
